@@ -8,14 +8,6 @@ import Albums from "./components/albums.jsx";
 import Data from "./components/data.jsx";
 
 class App extends Component {
-  state = {
-    albums: [
-      { id: 1, img: "th.jpg", value: 0 },
-      { id: 2, img: "m.jpg", value: 0 },
-      { id: 3, img: "e.jpg", value: 0 },
-    ],
-  };
-
   handleClick = (album) => {
     const albums = [...this.state.albums];
     const index = albums.indexOf(album);

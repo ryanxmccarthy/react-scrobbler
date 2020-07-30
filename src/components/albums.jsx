@@ -1,37 +1,31 @@
 import React, { Component } from "react";
-import Album from "./album";
 
 class Body extends Component {
+  state = {
+    albums: [
+      { id: 1, img: "th.jpg", plays: 0 },
+      { id: 2, img: "m.jpg", plays: 0 },
+      { id: 3, img: "e.jpg", plays: 0 },
+    ],
+  };
   render() {
     const imgStyle = {
       height: 400,
       width: 400,
       padding: 10,
     };
-
     return (
       <div>
         <h1>Select an Album</h1>
-        {console.log(this.props.albums)}
-        <img
-          src={require("../assets/images/th.jpg")}
-          onClick={() => alert("i was clicked")}
-          style={imgStyle}
-          key={1}
-          id="1"
-        />
-        <img
-          src={require("../assets/images/m.jpg")}
-          // onClick={handleClick}
-          style={imgStyle}
-          key={2}
-        />
-        <img
-          src={require("../assets/images/e.jpg")}
-          // onClick={handleClick}
-          style={imgStyle}
-          key={3}
-        />
+        {this.state.albums.map((album, i) => (
+          <img
+            style={imgStyle}
+            key={i}
+            alt=""
+            src={require(`../assets/images/${album.img}`)}
+            onClick={(props) => props.update(album.plays)}
+          ></img>
+        ))}
       </div>
     );
   }
