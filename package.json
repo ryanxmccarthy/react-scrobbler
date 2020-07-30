@@ -15,7 +15,6 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,6 +34,6 @@
   },
   "devDependencies": {
     "css-loader": "^4.0.0",
-    "jest": "^26.1.0"
+    "yarn": "^1.22.4"
   }
 }

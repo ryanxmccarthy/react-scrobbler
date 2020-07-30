@@ -13,11 +13,12 @@ class Body extends Component {
       <div>
         <h1>Select an Album</h1>
         {console.log(this.props.albums)}
-        {/* <img
+        <img
           src={require("../assets/images/th.jpg")}
-          // onClick={handleClick(this.id)}
+          onClick={() => alert("i was clicked")}
           style={imgStyle}
           key={1}
+          id="1"
         />
         <img
           src={require("../assets/images/m.jpg")}
@@ -30,7 +31,7 @@ class Body extends Component {
           // onClick={handleClick}
           style={imgStyle}
           key={3}
-        /> */}
+        />
       </div>
     );
   }
