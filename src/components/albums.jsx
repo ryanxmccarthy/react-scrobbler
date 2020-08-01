@@ -31,7 +31,7 @@ class Albums extends Component {
             //     plays: this.state.albums[album.id - 1].plays + 1,
             //   });
             // }}
-            onClick={() => console.log(this.band)}
+            onClick={this.props.onClick}
           ></img>
         ))}
         {this.state.albums.map((album, i) => (
