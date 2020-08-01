@@ -5,10 +5,10 @@ import { Helmet } from "react-helmet";
 //components
 import Header from "./components/header.jsx";
 import Albums from "./components/albums.jsx";
-import Data from "./components/data.jsx";
 
 class App extends Component {
-  handleClick = (album) => {
+  handleScrobble = (album) => {
+    console.log("i get here");
     const albums = [...this.state.albums];
     const index = albums.indexOf(album);
     albums[index] = { ...album };
@@ -23,8 +23,7 @@ class App extends Component {
           <style>{"body { background-color: black; color: white }"}</style>
         </Helmet>
         <Header />
-        <Albums onClick={this.handleClick} />
-        <Data />
+        <Albums onClick={this.handleScrobble} />
       </div>
     );
   }
