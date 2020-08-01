@@ -7,12 +7,21 @@ import Header from "./components/header.jsx";
 import Albums from "./components/albums.jsx";
 
 class App extends Component {
+  state = {
+    albums: [
+      { id: 1, band: "Darkthrone", img: "th.jpg", plays: 0 },
+      { id: 2, band: "Mayhem", img: "m.jpg", plays: 2 },
+      { id: 3, band: "Emperor", img: "e.jpg", plays: 1 },
+    ],
+  };
+
   handleScrobble = (album) => {
-    alert("I get here");
-    // const albums = [...this.state.albums];
+    const albums = [...this.state.albums];
+    console.log(albums);
     // const index = albums.indexOf(album);
-    // albums[index] = { ...album };
-    // albums[index].value++;
+    // console.log(index);
+    // albums[1] = { ...album };
+    // albums[1].value++;
     // this.setState({ albums });
   };
 
@@ -23,7 +32,7 @@ class App extends Component {
           <style>{"body { background-color: black; color: white }"}</style>
         </Helmet>
         <Header />
-        <Albums onClick={this.handleScrobble} />
+        <Albums onClick={this.handleScrobble} albums={this.state.albums} />
       </div>
     );
   }

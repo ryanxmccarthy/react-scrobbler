@@ -1,14 +1,8 @@
 import React, { Component } from "react";
-import Data from "./data";
+// import Data from "./data";
+import Album from "./album";
 
 class Albums extends Component {
-  state = {
-    albums: [
-      { id: 1, band: "Darkthrone", img: "th.jpg", plays: 0 },
-      { id: 2, band: "Mayhem", img: "m.jpg", plays: 2 },
-      { id: 3, band: "Emperor", img: "e.jpg", plays: 1 },
-    ],
-  };
   render() {
     const imgStyle = {
       height: 400,
@@ -18,25 +12,18 @@ class Albums extends Component {
     return (
       <div>
         <h2>Select an Album</h2>
-        {this.state.albums.map((album, i) => (
-          <img
-            style={imgStyle}
-            band={this.band}
+        {this.props.albums.map((album, i) => (
+          <Album
+            album={album}
             key={i}
-            alt=""
             src={require(`../assets/images/${album.img}`)}
-            // onClick={() => {
-            //   console.log(this.state.albums[album.id - 1].band);
-            //   this.setState({
-            //     plays: this.state.albums[album.id - 1].plays + 1,
-            //   });
-            // }}
+            style={imgStyle}
             onClick={this.props.onClick}
-          ></img>
+          />
         ))}
-        {this.state.albums.map((album, i) => (
+        {/* {this.props.albums.map((album, i) => (
           <Data band={album.band} key={i} plays={album.plays} />
-        ))}
+        ))} */}
       </div>
     );
   }
