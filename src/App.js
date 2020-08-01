@@ -8,7 +8,6 @@ import Albums from "./components/albums.jsx";
 
 class App extends Component {
   handleScrobble = (album) => {
-    console.log("i get here");
     const albums = [...this.state.albums];
     const index = albums.indexOf(album);
     albums[index] = { ...album };

@@ -5,8 +5,8 @@ class Albums extends Component {
   state = {
     albums: [
       { id: 1, band: "Darkthrone", img: "th.jpg", plays: 0 },
-      { id: 2, img: "m.jpg", plays: 0 },
-      { id: 3, img: "e.jpg", plays: 0 },
+      { id: 2, band: "Mayhem", img: "m.jpg", plays: 2 },
+      { id: 3, band: "Emperor", img: "e.jpg", plays: 1 },
     ],
   };
   render() {
@@ -17,7 +17,7 @@ class Albums extends Component {
     };
     return (
       <div>
-        <h1>Select an Album</h1>
+        <h2>Select an Album</h2>
         {this.state.albums.map((album, i) => (
           <img
             style={imgStyle}
@@ -34,10 +34,9 @@ class Albums extends Component {
             onClick={() => console.log(this.band)}
           ></img>
         ))}
-        <Data
-          band={this.state.albums[0].band}
-          plays={this.state.albums[0].plays}
-        />
+        {this.state.albums.map((album, i) => (
+          <Data band={album.band} key={i} plays={album.plays} />
+        ))}
       </div>
     );
   }
