@@ -17,11 +17,9 @@ class App extends Component {
 
   handleScrobble = (album) => {
     const albums = [...this.state.albums];
-    console.log(album);
     const index = albums.indexOf(album);
-    console.log(index);
-    albums[1] = { ...album };
-    albums[1].value++;
+    albums[index] = { ...album };
+    albums[index].plays++;
     this.setState({ albums });
   };
 
