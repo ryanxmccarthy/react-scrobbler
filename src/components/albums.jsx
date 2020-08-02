@@ -23,7 +23,7 @@ class Albums extends Component {
           />
         ))}
         {this.props.albums.map((album, i) => (
-          <Data band={album.band} key={i} plays={album.plays} />
+          <Data band={album.band} plays={album.plays} />
         ))}
       </div>
     );
