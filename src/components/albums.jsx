@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import Data from "./data";
+import Data from "./data";
 import Album from "./album";
 
 class Albums extends Component {
@@ -22,9 +22,9 @@ class Albums extends Component {
             onClick={this.props.onClick}
           />
         ))}
-        {/* {this.props.albums.map((album, i) => (
+        {this.props.albums.map((album, i) => (
           <Data band={album.band} key={i} plays={album.plays} />
-        ))} */}
+        ))}
       </div>
     );
   }

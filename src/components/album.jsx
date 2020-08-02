@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Albums from "./albums";
 
 class Album extends Component {
   render() {
