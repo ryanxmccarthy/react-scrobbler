@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Helmet } from "react-helmet";
 
 //components
 import Header from "./components/header.jsx";
@@ -27,9 +26,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Helmet>
-          <style>{"body { background-color: black; color: white }"}</style>
-        </Helmet>
         <Header />
         <Albums albums={this.state.albums} onClick={this.handleScrobble} />
         {this.state.albums.map((album) => (
