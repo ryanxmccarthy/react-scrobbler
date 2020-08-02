@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Data from "./data";
 import Album from "./album";
 
 class Albums extends Component {
@@ -12,18 +11,14 @@ class Albums extends Component {
     return (
       <div>
         <h2>Select an Album</h2>
-        {this.props.albums.map((album, i) => (
+        {this.props.albums.map((album) => (
           <Album
             album={album}
-            id={i}
-            key={i}
+            key={album.id}
             src={require(`../assets/images/${album.img}`)}
             style={imgStyle}
             onClick={this.props.onClick}
           />
-        ))}
-        {this.props.albums.map((album, i) => (
-          <Data band={album.band} plays={album.plays} />
         ))}
       </div>
     );

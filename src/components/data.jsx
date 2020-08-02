@@ -4,7 +4,7 @@ class Data extends Component {
   render() {
     return (
       <div>
-        <h3 key={this.props.key}>
+        <h3>
           {this.props.band} Plays: {this.props.plays}
         </h3>
       </div>

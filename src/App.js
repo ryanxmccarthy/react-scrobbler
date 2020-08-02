@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 //components
 import Header from "./components/header.jsx";
 import Albums from "./components/albums.jsx";
+import Data from "./components/data.jsx";
 
 class App extends Component {
   state = {
@@ -30,7 +31,10 @@ class App extends Component {
           <style>{"body { background-color: black; color: white }"}</style>
         </Helmet>
         <Header />
-        <Albums onClick={this.handleScrobble} albums={this.state.albums} />
+        <Albums albums={this.state.albums} onClick={this.handleScrobble} />
+        {this.state.albums.map((album) => (
+          <Data band={album.band} key={album.id} plays={album.plays} />
+        ))}
       </div>
     );
   }

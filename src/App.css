@@ -2,9 +2,11 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,
+h2,
+h3 {
+  font-family: canterbury;
+  letter-spacing: 2px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -26,6 +28,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@font-face {
+  font-family: canterbury;
+  src: url(../src/assets/fonts/Canterbury.ttf);
+  letter-spacing: 2px;
 }
 
 @keyframes App-logo-spin {
