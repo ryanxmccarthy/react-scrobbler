@@ -15,6 +15,7 @@ class Albums extends Component {
         {this.props.albums.map((album, i) => (
           <Album
             album={album}
+            id={i}
             key={i}
             src={require(`../assets/images/${album.img}`)}
             style={imgStyle}
