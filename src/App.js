@@ -15,6 +15,7 @@ class App extends Component {
         { id: 2, band: "Mayhem", img: "m.jpg", plays: 2 },
         { id: 3, band: "Emperor", img: "e.jpg", plays: 1 },
         { id: 4, band: "Immortal", img: "i.jpg", plays: 0 },
+        { id: 5, band: "Marduk", img: "marduk.jpg", plays: 1 },
       ],
     };
   }
