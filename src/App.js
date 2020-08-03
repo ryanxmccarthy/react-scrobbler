@@ -7,20 +7,25 @@ import Albums from "./components/albums.jsx";
 import Data from "./components/data.jsx";
 
 class App extends Component {
-  state = {
-    albums: [
-      { id: 1, band: "Darkthrone", img: "th.jpg", plays: 0 },
-      { id: 2, band: "Mayhem", img: "m.jpg", plays: 2 },
-      { id: 3, band: "Emperor", img: "e.jpg", plays: 1 },
-    ],
-  };
+  constructor() {
+    super();
+    this.state = {
+      albums: JSON.parse(localStorage.getItem("albums")) || [
+        { id: 1, band: "Darkthrone", img: "th.jpg", plays: 0 },
+        { id: 2, band: "Mayhem", img: "m.jpg", plays: 2 },
+        { id: 3, band: "Emperor", img: "e.jpg", plays: 1 },
+      ],
+    };
+  }
 
   handleScrobble = (album) => {
     const albums = [...this.state.albums];
     const index = albums.indexOf(album);
     albums[index] = { ...album };
     albums[index].plays++;
-    this.setState({ albums });
+    this.setState({ albums }, () => {
+      localStorage.setItem("albums", JSON.stringify(this.state.albums));
+    });
   };
 
   render() {
