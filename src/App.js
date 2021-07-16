@@ -6,6 +6,7 @@ import Header from "./components/header.jsx";
 import Albums from "./components/albums.jsx";
 import Data from "./components/data.jsx";
 
+//main app component
 class App extends Component {
   constructor() {
     super();
